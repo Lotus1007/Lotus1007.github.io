@@ -61,7 +61,8 @@ class Cursor {
         document.onmousemove = e => {
             (this.pos.curr == null) && this.move(e.clientX - 8, e.clientY - 8);
             this.pos.curr = { x: e.clientX - 8, y: e.clientY - 8 };
-            this.cursor.classList.remove("hidden"); };
+            this.cursor.classList.remove("hidden");
+        };
         document.onmouseenter = e => this.cursor.classList.remove("hidden");
         document.onmouseleave = e => this.cursor.classList.add("hidden");
         document.onmousedown = e => this.cursor.classList.add("active");
