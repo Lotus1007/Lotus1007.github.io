@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Blog 3</title>
+      <link href="/2023/05/03/20230503-lotus3/"/>
+      <url>/2023/05/03/20230503-lotus3/</url>
+      
+        <content type="html"><![CDATA[<pre><code>四月结束了。有的东西好像也结束了，虽然并放不下，暂且，但是再挣扎或许不太体面。线代也粗糙过完了，高数的同步练习还差了点，其他缓慢推进。五月事情有点多，大概。希望能效率会变高，希望能做好。回家做垃圾的感觉真好，和小镇的风相拥，和皎皎的月相望。不过这两天无意义感太重了。</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Blog 2</title>
       <link href="/2023/03/27/20230327-lotus2/"/>
       <url>/2023/03/27/20230327-lotus2/</url>
@@ -79,6 +104,17 @@
     
     
     <entry>
+      <title></title>
+      <link href="/css/mouseindex.css"/>
+      <url>/css/mouseindex.css</url>
+      
+        <content type="html"><![CDATA[/* 鼠标样式 */#cursor {    position: fixed;    width: 16px;    height: 16px;    /* 这里改变跟随的底色 */    background: rgb(255, 190, 76);    border-radius: 8px;    opacity: 0.25;    z-index: 10086;    pointer-events: none;    transition: 0.2s ease-in-out;    transition-property: background, opacity, transform;}#cursor.hidden {    opacity: 0;}#cursor.hover {    opacity: 0.1;    transform: scale(2.5);    -webkit-transform: scale(2.5);    -moz-transform: scale(2.5);    -ms-transform: scale(2.5);    -o-transform: scale(2.5);}#cursor.active {    opacity: 0.5;    transform: scale(0.5);    -webkit-transform: scale(0.5);    -moz-transform: scale(0.5);    -ms-transform: scale(0.5);    -o-transform: scale(0.5);}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>link</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
@@ -101,9 +137,9 @@
     
     
     <entry>
-      <title>电影</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>标签</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -112,20 +148,9 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/mouseindex.css"/>
-      <url>/css/mouseindex.css</url>
-      
-        <content type="html"><![CDATA[/* 鼠标样式 */#cursor {    position: fixed;    width: 16px;    height: 16px;    /* 这里改变跟随的底色 */    background: rgb(255, 190, 76);    border-radius: 8px;    opacity: 0.25;    z-index: 10086;    pointer-events: none;    transition: 0.2s ease-in-out;    transition-property: background, opacity, transform;}#cursor.hidden {    opacity: 0;}#cursor.hover {    opacity: 0.1;    transform: scale(2.5);    -webkit-transform: scale(2.5);    -moz-transform: scale(2.5);    -ms-transform: scale(2.5);    -o-transform: scale(2.5);}#cursor.active {    opacity: 0.5;    transform: scale(0.5);    -webkit-transform: scale(0.5);    -moz-transform: scale(0.5);    -ms-transform: scale(0.5);    -o-transform: scale(0.5);}]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>标签</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>电影</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
