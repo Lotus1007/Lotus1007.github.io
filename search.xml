@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Blog 4</title>
+      <link href="/2023/08/31/20230831-lotus4/"/>
+      <url>/2023/08/31/20230831-lotus4/</url>
+      
+        <content type="html"><![CDATA[<p>    好几个月没有来这了，懒鬼一个，本子上也许久没打开了。五六月大概是照常度过的，中间有考证&#x2F;级之类的，总体结果是好的。现在是暑假的尾声。七月学习上大概还有做点什么，八月，基本算得上废物，坦然来说，在家做废物真的很爽。有稍稍的运动下，骑车很好，晚风很好，淋漓的汗水也很好，不过两相对比之，跑步显得乏味些，但过两天去学校，多半只有跑步作为选择了。寄希望于在学校的痛苦里将学习效率弄上来，多半又要开始烟酒相伴的日子了，虽然将情绪寄托给外物好像还没长大，但是的的确确只有懦弱的心，或许。想起前段去寺庙抽到的签文，提到我的勇敢，会有一些，又像是自己套在外头架子的皮，我真的勇敢吗？最近床上的玩偶陆续被丢到洗衣机，明明已经不再是没有抱着玩偶就害怕黑夜的年纪，但是还是习惯把它们放在床上，好像这样就没有长大，一些自欺欺人。学习的进度还是得推啊。今天农历十六。</p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Blog 3</title>
       <link href="/2023/05/03/20230503-lotus3/"/>
       <url>/2023/05/03/20230503-lotus3/</url>
@@ -82,11 +107,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/css/mouseindex.css"/>
-      <url>/css/mouseindex.css</url>
+      <title>分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[/* 鼠标样式 */#cursor {    position: fixed;    width: 16px;    height: 16px;    /* 这里改变跟随的底色 */    background: rgb(255, 190, 76);    border-radius: 8px;    opacity: 0.25;    z-index: 10086;    pointer-events: none;    transition: 0.2s ease-in-out;    transition-property: background, opacity, transform;}#cursor.hidden {    opacity: 0;}#cursor.hover {    opacity: 0.1;    transform: scale(2.5);    -webkit-transform: scale(2.5);    -moz-transform: scale(2.5);    -ms-transform: scale(2.5);    -o-transform: scale(2.5);}#cursor.active {    opacity: 0.5;    transform: scale(0.5);    -webkit-transform: scale(0.5);    -moz-transform: scale(0.5);    -ms-transform: scale(0.5);    -o-transform: scale(0.5);}]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -104,22 +129,11 @@
     
     
     <entry>
-      <title>分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
-      <link href="/js/mouseindex.js"/>
-      <url>/js/mouseindex.js</url>
+      <link href="/css/mouseindex.css"/>
+      <url>/css/mouseindex.css</url>
       
-        <content type="html"><![CDATA[var CURSOR;Math.lerp = (a, b, n) => (1 - n) * a + n * b;const getStyle = (el, attr) => {    try {        return window.getComputedStyle ?            window.getComputedStyle(el)[attr] :            el.currentStyle[attr];    } catch (e) {}    return "";};class Cursor {    constructor() {        this.pos = { curr: null, prev: null };        this.pt = [];        this.create();        this.init();        this.render();    }    move(left, top) {        this.cursor.style["left"] = `${left}px`;        this.cursor.style["top"] = `${top}px`;    }    create() {        if (!this.cursor) {            this.cursor = document.createElement("div");            this.cursor.id = "cursor";            this.cursor.classList.add("hidden");            document.body.append(this.cursor);        }        var el = document.getElementsByTagName('*');        for (let i = 0; i < el.length; i++)            if (getStyle(el[i], "cursor") == "pointer")                this.pt.push(el[i].outerHTML);        document.body.appendChild((this.scr = document.createElement("style")));        // 这里改变鼠标指针的颜色 由svg生成        this.scr.innerHTML = `* {cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='8px' height='8px'><circle cx='4' cy='4' r='4' opacity='.5'/></svg>") 4 4, auto}`;    }    refresh() {        this.scr.remove();        this.cursor.classList.remove("hover");        this.cursor.classList.remove("active");        this.pos = { curr: null, prev: null };        this.pt = [];        this.create();        this.init();        this.render();    }    init() {        document.onmouseover = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.add("hover");        document.onmouseout = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.remove("hover");        document.onmousemove = e => {            (this.pos.curr == null) && this.move(e.clientX - 8, e.clientY - 8);            this.pos.curr = { x: e.clientX - 8, y: e.clientY - 8 };            this.cursor.classList.remove("hidden");        };        document.onmouseenter = e => this.cursor.classList.remove("hidden");        document.onmouseleave = e => this.cursor.classList.add("hidden");        document.onmousedown = e => this.cursor.classList.add("active");        document.onmouseup = e => this.cursor.classList.remove("active");    }    render() {        if (this.pos.prev) {            this.pos.prev.x = Math.lerp(this.pos.prev.x, this.pos.curr.x, 0.15);            this.pos.prev.y = Math.lerp(this.pos.prev.y, this.pos.curr.y, 0.15);            this.move(this.pos.prev.x, this.pos.prev.y);        } else {            this.pos.prev = this.pos.curr;        }        requestAnimationFrame(() => this.render());    }}(() => {    CURSOR = new Cursor();    // 需要重新获取列表时，使用 CURSOR.refresh()})();]]></content>
+        <content type="html"><![CDATA[/* 鼠标样式 */#cursor {    position: fixed;    width: 16px;    height: 16px;    /* 这里改变跟随的底色 */    background: rgb(255, 190, 76);    border-radius: 8px;    opacity: 0.25;    z-index: 10086;    pointer-events: none;    transition: 0.2s ease-in-out;    transition-property: background, opacity, transform;}#cursor.hidden {    opacity: 0;}#cursor.hover {    opacity: 0.1;    transform: scale(2.5);    -webkit-transform: scale(2.5);    -moz-transform: scale(2.5);    -ms-transform: scale(2.5);    -o-transform: scale(2.5);}#cursor.active {    opacity: 0.5;    transform: scale(0.5);    -webkit-transform: scale(0.5);    -moz-transform: scale(0.5);    -ms-transform: scale(0.5);    -o-transform: scale(0.5);}]]></content>
       
     </entry>
     
@@ -129,17 +143,6 @@
       <title>link</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -159,11 +162,33 @@
     
     
     <entry>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>标签</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/mouseindex.js"/>
+      <url>/js/mouseindex.js</url>
+      
+        <content type="html"><![CDATA[var CURSOR;Math.lerp = (a, b, n) => (1 - n) * a + n * b;const getStyle = (el, attr) => {    try {        return window.getComputedStyle ?            window.getComputedStyle(el)[attr] :            el.currentStyle[attr];    } catch (e) {}    return "";};class Cursor {    constructor() {        this.pos = { curr: null, prev: null };        this.pt = [];        this.create();        this.init();        this.render();    }    move(left, top) {        this.cursor.style["left"] = `${left}px`;        this.cursor.style["top"] = `${top}px`;    }    create() {        if (!this.cursor) {            this.cursor = document.createElement("div");            this.cursor.id = "cursor";            this.cursor.classList.add("hidden");            document.body.append(this.cursor);        }        var el = document.getElementsByTagName('*');        for (let i = 0; i < el.length; i++)            if (getStyle(el[i], "cursor") == "pointer")                this.pt.push(el[i].outerHTML);        document.body.appendChild((this.scr = document.createElement("style")));        // 这里改变鼠标指针的颜色 由svg生成        this.scr.innerHTML = `* {cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='8px' height='8px'><circle cx='4' cy='4' r='4' opacity='.5'/></svg>") 4 4, auto}`;    }    refresh() {        this.scr.remove();        this.cursor.classList.remove("hover");        this.cursor.classList.remove("active");        this.pos = { curr: null, prev: null };        this.pt = [];        this.create();        this.init();        this.render();    }    init() {        document.onmouseover = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.add("hover");        document.onmouseout = e => this.pt.includes(e.target.outerHTML) && this.cursor.classList.remove("hover");        document.onmousemove = e => {            (this.pos.curr == null) && this.move(e.clientX - 8, e.clientY - 8);            this.pos.curr = { x: e.clientX - 8, y: e.clientY - 8 };            this.cursor.classList.remove("hidden");        };        document.onmouseenter = e => this.cursor.classList.remove("hidden");        document.onmouseleave = e => this.cursor.classList.add("hidden");        document.onmousedown = e => this.cursor.classList.add("active");        document.onmouseup = e => this.cursor.classList.remove("active");    }    render() {        if (this.pos.prev) {            this.pos.prev.x = Math.lerp(this.pos.prev.x, this.pos.curr.x, 0.15);            this.pos.prev.y = Math.lerp(this.pos.prev.y, this.pos.curr.y, 0.15);            this.move(this.pos.prev.x, this.pos.prev.y);        } else {            this.pos.prev = this.pos.curr;        }        requestAnimationFrame(() => this.render());    }}(() => {    CURSOR = new Cursor();    // 需要重新获取列表时，使用 CURSOR.refresh()})();]]></content>
       
     </entry>
     
